@@ -45,4 +45,8 @@ fs.access('./recoveryFiles', (error) => {
 	} else console.log('Folder already exists');
 });
 
-await Promise.resolve(console.log('🎉'));
+// Deleting files
+fs.unlink('./files/fourthFile.txt', (error) => {
+	if (error) console.log;
+	else console.log('File deleted.');
+});
