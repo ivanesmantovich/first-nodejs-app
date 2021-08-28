@@ -1,7 +1,7 @@
-import {express, response} from 'express';
-import { read, readFile } from 'fs';
+// import {express, response} from 'express';
+// import { read, readFile } from 'fs';
 
-const app = express();
+// const app = express();
 
 console.log('hi');
 

@@ -1,5 +1,6 @@
 import http from 'http';
 import fs from 'fs';
+import _ from 'lodash';
 
 // Runs every time i connect to the site
 let server = http.createServer((request, response) => {
@@ -33,6 +34,18 @@ let server = http.createServer((request, response) => {
 			response.end(data);
 		}
 	});
+
+	// LODASH: Practice
+	let randomNum = _.random(0, 20);
+	console.log(randomNum);
+
+	let onceInTheLifetime = _.once(() => {
+		console.log('HELLOOOOOOOOOOO!');
+	});
+	onceInTheLifetime();
+	onceInTheLifetime(); // Not gonna work
+
+	// ----------------------------------
 });
 
 server.listen(3000, 'localhost', () => {
