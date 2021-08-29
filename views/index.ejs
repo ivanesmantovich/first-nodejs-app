@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Local News | <%=title%></title>
+	</head>
+	<body>
+		<nav>
+			<div class="site-title">
+				<a href="/index"><h1>Local News</h1></a>
+				<p>All Information That You Need.</p>
+			</div>
+			<div>
+				<a href="/index">Home</a>
+				<a href="/about">About</a>
+				<a href="/faq">FAQ</a>
+			</div>
+			<div><a href="/news/create">Post some news</a></div>
+		</nav>
+
+		<div class="content">
+			<h2>Welcome back.</h2>
+			<!-- prettier-ignore -->
+			<% if (news.length > 0) {%>
+				<% news.forEach(newsPage => { %>
+			<h3 class="title"><%=newsPage.title%></h3>
+			<p class="snippet"><%=newsPage.snippet%></p>
+			<% }) %> <% } %>
+		</div>
+	</body>
+</html>
