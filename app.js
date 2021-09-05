@@ -122,4 +122,4 @@ app.use((request, response) => {
 	response.render('404', { title: '404' });
 });
 
-// 1
+// Workplace reinovation days: 1 2
