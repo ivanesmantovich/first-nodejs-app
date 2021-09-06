@@ -121,3 +121,5 @@ app.get('/news/create', (request, response) => {
 app.use((request, response) => {
 	response.render('404', { title: '404' });
 });
+
+// 1
