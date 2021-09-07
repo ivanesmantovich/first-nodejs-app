@@ -6,13 +6,18 @@ import mongoose from 'mongoose';
 const __dirname = path.resolve();
 //Importing my News model
 import News from './models/news.js';
+import { userName, password } from './secrets.js';
 
 // Set up an app
 const app = express();
 
 // MONGODB CONNECTION
 const dbURI =
-	'mongodb+srv://readerWriter:FrozenBase67@firstmongo.8ft1f.mongodb.net/localNewsDB?retryWrites=true&w=majority';
+	'mongodb+srv://' +
+	userName +
+	':' +
+	password +
+	'@firstmongo.8ft1f.mongodb.net/localNewsDB?retryWrites=true&w=majority';
 mongoose
 	.connect(dbURI)
 	.then((result) => {
@@ -102,8 +107,9 @@ app.get('/news', (request, response) => {
 	// Get all news instances
 	// News.find()
 	// OR
-	// I can sort the news i get by certain parameter 
-	News.find().sort({createdAt: -1})
+	// I can sort the news i get by certain parameter
+	News.find()
+		.sort({ createdAt: -1 })
 		.then((result) => {
 			response.render('index', { title: 'All news', news: result });
 		})
