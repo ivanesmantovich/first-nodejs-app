@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../partials/head.ejs') %>
+	<body>
+		<%- include('../partials/nav.ejs') %>
+		<div class="categories content">
+			<h2>Explore by category</h2>
+			<% if (categories.length > 0) {%> 
+
+				<% categories.forEach(category => { %>
+					
+					<div class="category"><%= category.title %> </div>
+					
+			<% }) %> <% } else { %>
+
+				<h3 class="title">There are no categories!</h3>
+
+			<% } %>
+		</div>
+		<%- include('../partials/footer.ejs') %> 
+	</body>
+</html>

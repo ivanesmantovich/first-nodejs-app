@@ -41,9 +41,38 @@ h3 {
 	text-transform: capitalize;
 	margin-bottom: 5px;
 }
+/* Index styles */
+.news a {
+	display: block;
+	margin: 40px 0;
+	padding-left: 30px;
+}
+.news a h3 {
+	color: darkslateblue;
+}
+.news a:hover h3 {
+	text-decoration: underline;
+	color: blueviolet;
+}
 .content {
 	margin-left: 20px;
 }
+/* Details styles */
+.details {
+	position: relative;
+}
+.delete {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	padding: 8px;
+}
+.delete:hover {
+	cursor: pointer;
+	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+/* Create styles */
 .create-news form {
 	max-width: 400px;
 	margin: 0 auto;

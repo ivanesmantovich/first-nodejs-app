@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../partials/head.ejs') %>
+	<body>
+		<%- include('../partials/nav.ejs') %>
+		<!-- prettier-ignore -->
+		<div class="news content">
+			<h2>Welcome back.</h2>
+			<% if (news.length > 0) {%> 
+
+				<% news.forEach(newsPage => { %>
+					
+					<a class="single" href="/news/<%= newsPage._id %> ">
+						<h3 class="title"><%=newsPage.title%></h3>
+						<p class="snippet"><%=newsPage.snippet%></p>
+					</a>
+
+			<% }) %> <% } else { %>
+
+				<h3 class="title">There are no news!</h3>
+
+			<% } %>
+		</div>
+		<%- include('../partials/footer.ejs') %>
+	</body>
+</html>

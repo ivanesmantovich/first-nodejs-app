@@ -13,7 +13,11 @@ const newsSchema = new schema({ // Fields object
     body: {
         type: String,
         required: true
-    }
+    },
+    categories: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category'
+    }]
 }, {timestamps: true}); // Options object
 
 const News = mongoose.model('News', newsSchema);
